@@ -1,15 +1,11 @@
 import logo from "../assets/Farm.svg";
+import Footer from "./Footer";
 
 export const Home = ({ title, description }) => {
   return (
-    <div className="px-4 py-5 my-5 text-center">
-      <h1 className="display-5 fw-bold">{title}</h1>
-      <img
-        src={logo}
-        className="d-block mx-auto mb-4"
-        height="300"
-        alt="logo"
-      />
+    <div className="text-center">
+      <h1 className="fw-bold">{title}</h1>
+      <img src={logo} className="d-block  mb-4" height="300" alt="logo" />
 
       <div className="col-lg-6 mx-auto">
         <p className="lead mb-4">{description}</p>
@@ -28,6 +24,7 @@ export const Home = ({ title, description }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

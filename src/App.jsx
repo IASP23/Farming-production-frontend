@@ -1,12 +1,5 @@
 import "./App.css";
-import {
-  Link,
-  Route,
-  Routes,
-  useNavigate,
-  Router,
-  BrowserRouter,
-} from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Home } from "./components/Home";
 import UserLogin from "./components/user/UserLogin";
 import { ProductList } from "./components/product/ProductList";
@@ -16,6 +9,8 @@ import { ProductCard } from "./components/product/ProductCard";
 
 import { MaintenanceCard } from "./components/maintenance/MaintenanceCard";
 import { MaintenanceForm } from "./components/maintenance/MaintenanceForm";
+import UserRegister from "./components/user/UserRegister";
+
 const title = "Farming Production";
 const description = "Aplicación web para el control de productos agricolas";
 
@@ -44,6 +39,12 @@ function App() {
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
+              <Link to={"/register"} className="nav-link">
+                Registrar
+              </Link>
+            </li>
+
+            <li className="nav-item">
               <Link to={"/products"} className="nav-link">
                 Productos
               </Link>
@@ -62,6 +63,7 @@ function App() {
         </nav>
         <div className="container mt-3">
           <Routes>
+            <Route path="/register" element={<UserRegister />} />
             <Route
               path="/"
               element={<Home title={title} description={description} />}

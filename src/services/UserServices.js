@@ -13,7 +13,19 @@ const login = async (data) => {
   }
 };
 
+const register = async (data) => {
+  const url = `/users`;
+  try {
+    const response = await http.post(url, data);
+    showAlert("¡Correcto!", "Usuario  correctamente");
+  } catch (err) {
+    console.error(err);
+    showErrorAlert("¡Error!", "Usuario incorrecto");
+  }
+};
+
 const UserService = {
   login,
+  register,
 };
 export default UserService;
