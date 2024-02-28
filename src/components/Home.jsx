@@ -1,14 +1,15 @@
+import Gallery from "../Gallery";
 import logo from "../assets/Farm.svg";
 import Footer from "./Footer";
 
 export const Home = ({ title, description }) => {
   return (
-    <div className="text-center">
-      <h1 className="fw-bold">{title}</h1>
-      <img src={logo} className="d-block  mb-4" height="300" alt="logo" />
+    <div>
+      <h1>{title}</h1>
+      <img src={logo} height="300" alt="logo" />
 
       <div className="col-lg-6 mx-auto">
-        <p className="lead mb-4">{description}</p>
+        <p className="lead mb-4 text-black">{description}</p>
         <div className="card">
           <img
             src="https://conceptoabc.com/wp-content/uploads/2021/07/Agricultura.jpg"
@@ -24,6 +25,9 @@ export const Home = ({ title, description }) => {
           </div>
         </div>
       </div>
+
+      <Gallery />
+
       <Footer />
     </div>
   );
